@@ -1,0 +1,74 @@
+<button (click)="addNew()">Add New</button>
+<p-dataTable [value]="Events" [editable]="true" [immutable]="false"  >
+   
+    <p-column field="EventName" header="EventName" [editable]="true">
+        <ng-template let-row="rowData" pTemplate="body">
+            <div *ngIf="!row.isEditable">{{row.EventName}}</div>
+            <div *ngIf="row.isEditable">
+              <input type="text" [(ngModel)]="row.EventName">
+            </div>
+        </ng-template>
+
+    </p-column>
+    <p-column field="EventDate" header="EventDate" [editable]="true">
+        <ng-template let-row="rowData" pTemplate="body">
+            <div *ngIf="!row.isEditable">{{row.EventDate}}</div>
+            <div *ngIf="row.isEditable">
+              <input type="text" [(ngModel)]="row.EventDate">
+            </div>
+        </ng-template>
+
+    </p-column>
+   <p-column field="Location" header="Location" [editable]="true">
+    <ng-template let-row="rowData" pTemplate="body">
+        <div *ngIf="!row.isEditable">{{row.Location}}</div>
+        <div *ngIf="row.isEditable">
+          <input type="text" [(ngModel)]="row.Location">
+        </div>
+    </ng-template>
+
+   </p-column>
+   <p-column field="Project" header="Project" [editable]="true">
+    <ng-template let-row="rowData" pTemplate="body">
+        <div *ngIf="!row.isEditable">{{row.Project}}</div>
+        <div *ngIf="row.isEditable">
+          <input type="text" [(ngModel)]="row.Project">
+        </div>
+    </ng-template>
+
+   </p-column>
+   <p-column field="POCId" header="POCId" [editable]="true">
+    <ng-template let-row="rowData" pTemplate="body">
+        <div *ngIf="!row.isEditable">{{row.POCId}}</div>
+        <div *ngIf="row.isEditable">
+          <input type="text" [(ngModel)]="row.POCId">
+        </div>
+    </ng-template>
+
+   </p-column>
+   <p-column field="POCName" header="POCName" [editable]="true">
+
+    <ng-template let-row="rowData" pTemplate="body">
+        <div *ngIf="!row.isEditable">{{row.POCName}}</div>
+        <div *ngIf="row.isEditable">
+          <input type="text" [(ngModel)]="row.POCName">
+        </div>
+    </ng-template>
+   </p-column>
+   <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="editRow(row)">Edit</button>
+    </ng-template>
+  </p-column>
+  <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="save(row)">Save</button>
+    </ng-template>
+    
+  </p-column>
+   <p-column field="" header="" [style]="{'text-align':'center'}">
+    <ng-template let-row="rowData" pTemplate="body">
+      <button (click)="delete(row)">Delete</button>
+    </ng-template>
+  </p-column>
+</p-dataTable>
