@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EventsComponent } from './admin/events/events.component';
 import {InputTextModule} from 'primeng/inputtext';
-import { NgDatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     ButtonModule,
     InputTextModule,
     CalendarModule,
-    NgDatepickerModule,
     RouterModule.forRoot([
       {
         path:'',
