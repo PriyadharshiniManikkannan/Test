@@ -4,12 +4,14 @@ import {CommonModule} from '@angular/common'
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {DataTableModule} from 'primeng/primeng'
+import {DataTableModule,ButtonModule,CalendarModule} from 'primeng/primeng'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EventsComponent } from './admin/events/events.component';
+import {InputTextModule} from 'primeng/inputtext';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { EventsComponent } from './admin/events/events.component';
     LoginComponent,
     AdminComponent,
     EventsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,10 @@ import { EventsComponent } from './admin/events/events.component';
     FormsModule,
     HttpClientModule,
     DataTableModule,
+    ButtonModule,
+    InputTextModule,
+    CalendarModule,
+    NgDatepickerModule,
     RouterModule.forRoot([
       {
         path:'',

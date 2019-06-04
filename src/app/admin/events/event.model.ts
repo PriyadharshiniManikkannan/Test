@@ -1,9 +1,9 @@
 export class Event {
-    
+    EventId: any;
     EventName:  string;      
     EventDate: any;      
-    Location: string;
+    Baselocation: string;
     Project: string;
-    POCId: number;       
-    POCName:string;     
+    EventPOCId: number;       
+    EventPOCName:string;     
 }
