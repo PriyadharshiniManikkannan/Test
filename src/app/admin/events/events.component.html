@@ -25,8 +25,7 @@
         <ng-template let-row="rowData" pTemplate="body">
             <div *ngIf="!row.isEditable">{{row.EventDate}}</div>
             <div *ngIf="row.isEditable">
-               <input type="datetime-local" style="width:210px" [ngModel]="row.EventDate|date:'yyyy-MM-ddTHH:mm'"  (ngModelChange)="row.EventDate = $event" pInputText>
-          
+               <input type="datetime-local" style="width:210px" [ngModel]="row.EventDate|date:'yyyy-MM-ddTHH:mm'"  (ngModelChange)="row.EventDate = $event" pInputText>  
             </div>
         </ng-template>
 
