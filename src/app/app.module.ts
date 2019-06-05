@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,Input  } from '@angular/core';
+import { AfterContentInit, AfterViewInit, ElementRef, QueryList, EventEmitter } from '@angular/core';
 import {CommonModule} from '@angular/common'
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {DataTableModule,ButtonModule,CalendarModule} from 'primeng/primeng'
+import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -27,14 +29,20 @@ import {InputTextModule} from 'primeng/inputtext';
     FormsModule,
     HttpClientModule,
     DataTableModule,
+    TableModule,
     ButtonModule,
     InputTextModule,
     CalendarModule,
     RouterModule.forRoot([
       {
+        path:'home',
+        component:LoginComponent
+      },
+      {
         path:'',
         component:LoginComponent
       },
+         
       {
         path: 'admin',
         component: AdminComponent

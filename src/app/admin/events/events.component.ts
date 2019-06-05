@@ -21,6 +21,9 @@ export class EventsComponent implements OnInit {
   EventPOCName: string;
   Events: any = [];
   cols: any[];
+  clonedEvents: { [s: string]: Event; } = {};
+  
+  
   delRow;
 
   showSucessMessage: boolean;
@@ -65,6 +68,18 @@ export class EventsComponent implements OnInit {
 
 
   }
+
+  onRowEditInit(evnt: Event) {
+    this.clonedEvents[evnt.EventDate] = {...evnt};
+}
+
+onRowEditCancel(evnt: Event, index: number) {
+  this.Events[index] = this.clonedEvents[evnt.EventId];
+  delete this.clonedEvents[evnt.EventId];
+}
+
+
+
   save(row) {
     var objEvent = new Event();
     objEvent.EventName = row.EventName;
